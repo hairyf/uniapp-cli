@@ -16,7 +16,7 @@
 npm i open-devtools -D
 ~~~
 
-### 二、替换 package.json 命令
+### 三、替换 package.json 命令
 
 将 scripts 中所有命令中 `vue-cli-service uni-build` 或者是  `vue-cli-service uni-build --watch` 的命令替换为 `open-devtools`，例如以下实例
 
@@ -30,7 +30,7 @@ npm i open-devtools -D
 }
 ~~~
 
-### 三、package.json 中对应调试器路径
+### 四、package.json 中对应调试器路径
 
 这里需要注意，该路径需要绝对路径，路径分割符号`\`得进行转移`\\`
 
@@ -43,7 +43,11 @@ npm i open-devtools -D
 }
 ~~~
 
-### 三、运行项目
+### 五、开启开发者工具命令行
+
+开发者工具的设置 -> 安全设置中开启服务端口。
+
+### 六、运行项目
 
 ~~~makefile
 npm run dev:mp-weixin
