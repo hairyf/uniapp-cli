@@ -1,0 +1,17 @@
+{
+  "name": "open-devtools",
+  "version": "0.1.6",
+  "description": "open-devtools-tool",
+  "main": "index.js",
+  "bin": {
+    "open-devtools": "index.js"
+  },
+  "author": "Mr.Mao",
+  "license": "ISC",
+  "dependencies": {
+    "shelljs": "^0.8.4"
+  },
+  "devtoolsConfig": {
+    "weixin": "F:\\softs\\微信web开发者工具"
+  }
+}
