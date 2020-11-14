@@ -25,7 +25,7 @@ npm i open-devtools -D
     "scripts": {
         "dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin open-devtools",
         "build:mp-weixin": "cross-env NODE_ENV=production UNI_PLATFORM=mp-weixin open-devtools",
-        .......
+        "...": "..."
     }
 }
 ~~~
@@ -38,7 +38,7 @@ npm i open-devtools -D
 {
     "devtoolsConfig": {
     	"weixin": "F:\\softs\\微信web开发者工具",
-        .....
+       "...": "..."
   	}
 }
 ~~~
