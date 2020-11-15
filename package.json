@@ -1,6 +1,6 @@
 {
   "name": "open-devtools",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "open-devtools-tool",
   "main": "index.js",
   "bin": {
