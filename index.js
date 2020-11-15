@@ -14,10 +14,12 @@ const UNI_PLATFORM = process.env.UNI_PLATFORM
 const EXEC_CODE = utils.getRunPresetExec(NODE_ENV, UNI_PLATFORM)
 
 // 微信项目源码路径
-const WEIXIN_PRESET_PATH = path.resolve(PRESET_PATH, 'dist/dev/mp-weixin')
+const EXEC_CODE_TYPE = NODE_ENV === 'development' ? 'dev' : 'build'
+const WEIXIN_PRESET_PATH = path.resolve(PRESET_PATH, `dist/${EXEC_CODE_TYPE}/mp-weixin`)
 
 // 获取开发者工具目录
-const DEVTOOLS_CONFIG = JSON.parse(fs.readFileSync(PACKAGE_PATH).toString()).devtoolsConfig || {}
+const PACKAGE_CONFIG = JSON.parse(fs.readFileSync(PACKAGE_PATH).toString())
+const DEVTOOLS_CONFIG = PACKAGE_CONFIG.devtoolsConfig || {}
 const WEIXIN_DEVTOOLS_PATH = DEVTOOLS_CONFIG.weixin
 
 
