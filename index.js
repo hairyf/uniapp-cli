@@ -25,6 +25,15 @@ const WEIXIN_DEVTOOLS_PATH = DEVTOOLS_CONFIG.weixin
 
 // 打开微信开发者调试工具, 并运行编译微信小程序
 const openWeixinDevTools = () => {
+  // 当调试器路径为空时, 给予提示并直接运行程序
+  if (!WEIXIN_DEVTOOLS_PATH) {
+    console.error('当前调试器路径为空, 自动打开调试器功能将失效')
+    setTimeout(() => {
+      shell.cd(PRESET_PATH)
+      shell.exec(EXEC_CODE)
+    }, 500)
+    return false
+  }
   // 先写入, 防止无内容导致调试工具报错
   utils.mkdirsSync(WEIXIN_PRESET_PATH)
   const writeFileStr = JSON.stringify({ appid: 'touristappid', projectname: 'open-devtools' }, null, "\t")
@@ -42,7 +51,7 @@ const openWeixinDevTools = () => {
 
 if (UNI_PLATFORM === 'mp-weixin') {
   openWeixinDevTools()
-  return false;
+  return false
 }
 
 shell.cd(PRESET_PATH)
