@@ -27,7 +27,7 @@ const WEIXIN_DEVTOOLS_PATH = DEVTOOLS_CONFIG.weixin
 const openWeixinDevTools = () => {
   // 当调试器路径为空时, 给予提示并直接运行程序
   if (!WEIXIN_DEVTOOLS_PATH) {
-    console.error('当前调试器路径为空, 自动打开调试器功能将失效')
+    shell.echo('当前调试器路径为空, 自动打开调试器功能将失效')
     setTimeout(() => {
       shell.cd(PRESET_PATH)
       shell.exec(EXEC_CODE)
