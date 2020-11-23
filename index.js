@@ -2,7 +2,12 @@
 const fs = require("fs")
 const path = require("path")
 const shell = require('shelljs')
+const program = require('commander')
 const utils = require(path.resolve(__dirname, './src/utils'))
+
+program
+  .option('-m, --minimize')
+  .parse(process.argv)
 
 // 运行项目路径读取
 const PRESET_PATH = path.resolve(__dirname, '../../')
@@ -11,7 +16,7 @@ const PACKAGE_PATH = path.resolve(PRESET_PATH, './package.json')
 // 当前运行环境变量与运行命令
 const NODE_ENV = process.env.NODE_ENV
 const UNI_PLATFORM = process.env.UNI_PLATFORM
-const EXEC_CODE = utils.getRunPresetExec(NODE_ENV, UNI_PLATFORM)
+const EXEC_CODE = utils.getRunPresetExec(NODE_ENV, UNI_PLATFORM, program.minimize)
 
 // 微信项目源码路径
 const EXEC_CODE_TYPE = NODE_ENV === 'development' ? 'dev' : 'build'
