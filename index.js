@@ -42,7 +42,9 @@ const openWeixinDevTools = () => {
   // 先写入, 防止无内容导致调试工具报错
   utils.mkdirsSync(WEIXIN_PRESET_PATH)
   const writeFileStr = JSON.stringify({ appid: 'touristappid', projectname: 'open-devtools' }, null, "\t")
-  fs.writeFileSync(path.resolve(WEIXIN_PRESET_PATH, './project.config.json'), writeFileStr, { flag: 'w' })
+  try {
+    fs.writeFileSync(path.resolve(WEIXIN_PRESET_PATH, './project.config.json'), writeFileStr, { flag: 'wx' })
+  } catch (error) { }
   // 打开小程序项目
   const openDevToolsShell = `cli open --project ${WEIXIN_PRESET_PATH} --color=always`
   shell.cd(WEIXIN_DEVTOOLS_PATH)
