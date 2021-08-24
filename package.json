@@ -1,7 +1,7 @@
 {
-  "name": "uniapp-cli-devtool",
-  "version": "0.0.1",
-  "description": "uniapp-cli-devtool",
+  "name": "uniapp-cli-run",
+  "version": "0.0.2",
+  "description": "uniapp-cli-run",
   "bin": {
     "uniapp-cli-run": "bin/index.js"
   },
@@ -15,7 +15,8 @@
   "files": [
     "bin",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "meta"
   ],
   "author": "Mr.Mao",
   "license": "ISC",
