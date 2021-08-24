@@ -1,18 +1,35 @@
 {
-  "name": "open-devtools",
-  "version": "0.2.1",
-  "description": "open-devtools-tool",
-  "main": "index.js",
+  "name": "uniapp-cli-devtool",
+  "version": "0.0.1",
+  "description": "uniapp-cli-devtool",
   "bin": {
-    "open-devtools": "index.js"
+    "uniapp-cli-run": "bin/index.js"
   },
+  "scripts": {
+    "dev": "tsc --watch",
+    "serve": "npm run dev:h5",
+    "build:mp-weixin": "cross-env NODE_ENV=production UNI_PLATFORM=mp-weixin vue-cli-service uni-build",
+    "dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch",
+    "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
   "author": "Mr.Mao",
   "license": "ISC",
+  "prettier": "@tuimao/eslint/prettier.js",
   "dependencies": {
-    "commander": "^6.2.0",
-    "shelljs": "^0.8.4"
+    "consola": "^2.15.3",
+    "enquirer": "^2.3.6",
+    "esno": "^0.9.1",
+    "execa": "^5.1.1",
+    "fs-extra": "^10.0.0"
   },
-  "devtoolsConfig": {
-    "weixin": "F:\\softs\\微信web开发者工具"
+  "devDependencies": {
+    "@tuimao/eslint": "^1.2.0-bata.3",
+    "@types/fs-extra": "^9.0.12",
+    "@types/node": "^16.7.1"
   }
 }

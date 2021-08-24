@@ -1,10 +1,10 @@
-# uni 脚手架工具 open-devtools
+# uni 脚手架工具 uniapp-cli-run
 
-## open-devtools 简述
+## uniapp-cli-run 简述
 
-用于 uni 脚手架启动小程序端时自动打开开发者工具，目前只支持微信小程序，后续将进行支持其他小程序。
+用于 uni 脚手架启动小程序端时自动打开开发者工具，目前只支持微信小程序，如需支持其他小程序，请在 lssues 中提出建议。
 
-## open-devtools 使用指南
+## uniapp-cli-run 使用指南
 
 ### 一、构建 uni 脚手架项目
 
@@ -13,49 +13,24 @@
 ### 二、项目中安装扩展插件
 
 ~~~makefile
-npm i open-devtools -D
+# 当前项目安装, 也可全局安装
+npm i uniapp-cli-run -D
 ~~~
 
-### 三、替换 package.json 命令
-
-将 scripts 中所有命令中 `vue-cli-service uni-build` 或者是  `vue-cli-service uni-build --watch` 的命令替换为 `open-devtools`，例如以下实例
-
-~~~json
-{
-    "scripts": {
-        "dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin open-devtools",
-        "build:mp-weixin": "cross-env NODE_ENV=production UNI_PLATFORM=mp-weixin open-devtools",
-        "...": "..."
-    }
-}
-~~~
-
-### 四、package.json 中对应调试器路径
-
-这里需要注意，该路径需要绝对路径，路径分割符号`\`得进行转移`\\`
-
-~~~json
-{
-    "devtoolsConfig": {
-    	"weixin": "F:\\softs\\微信web开发者工具",
-       "...": "..."
-  	}
-}
-~~~
-
-### 五、开启开发者工具命令行
+### 三、开启开发者工具命令行
 
 开发者工具的设置 -> 安全设置中开启服务端口。
 
-### 六、运行项目
+### 四、项目中运行脚本
 
 ~~~makefile
-npm run dev:mp-weixin
+# 当前项目运行, 全局安装使用不用加 npx
+npx uniapp-cli-run
 ~~~
+
+[运行展示](meta/images/script.png)
 
 ## 注意事项
 
 - 未支持的小程序不会自动打开调试器，但也不会使该编译命令失效
-- 将所有命令都替换为 `cross-env ... open-devtools` 以便后期兼容后，直接更新即可使用
-- 安装插件后，想要自动打开调试器，`package.json` 中的 `devtoolsConfig` 为必选项
 
