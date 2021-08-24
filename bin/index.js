@@ -10,7 +10,7 @@ const config_1 = require("./config");
 const utils_1 = require("./utils");
 const devtool_1 = require("./utils/devtool");
 const openDevtools = async () => {
-    const { is, code, type, script } = await devtool_1.enquirerRunType();
+    const { is, type, script } = await devtool_1.enquirerRunType();
     if (is('mp-weixin') && ['dev', 'build'].includes(type)) {
         const projectPath = path_1.default.join(process.cwd(), 'dist', type, 'mp-weixin');
         await Promise.all([

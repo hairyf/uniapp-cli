@@ -6,7 +6,7 @@ import { ensureJson } from './utils'
 import { enquirerRunType, ensureDevtoolPath } from './utils/devtool'
 
 const openDevtools = async () => {
-  const { is, code, type, script } = await enquirerRunType()
+  const { is, type, script } = await enquirerRunType()
 
   if (is('mp-weixin') && ['dev', 'build'].includes(type)) {
     const projectPath = path.join(process.cwd(), 'dist', type, 'mp-weixin')
