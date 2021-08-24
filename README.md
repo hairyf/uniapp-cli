@@ -8,7 +8,8 @@
 
 ### 一、构建 uni 脚手架项目
 
-具体参考 dcloud 官网介绍：[通过 vue-cli 命令行](https://uniapp.dcloud.io/quickstart?id=_2-%e9%80%9a%e8%bf%87vue-cli%e5%91%bd%e4%bb%a4%e8%a1%8c)，[当 uni-app 遇见 vscode](https://ask.dcloud.net.cn/article/36286)
+[通过 vue-cli 命令行](https://uniapp.dcloud.io/quickstart?id=_2-%e9%80%9a%e8%bf%87vue-cli%e5%91%bd%e4%bb%a4%e8%a1%8c)
+[当 uni-app 遇见 vscode](https://ask.dcloud.net.cn/article/36286)
 
 ### 二、项目中安装扩展插件
 
