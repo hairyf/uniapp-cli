@@ -1,10 +1,10 @@
-# uni 脚手架工具 uniapp-cli-run
+# uni 脚手架工具(uniapp-cli-run)
 
-## uniapp-cli-run 简述
+## 简述
 
 用于 uni 脚手架启动小程序端时自动打开开发者工具，目前只支持微信小程序，如需支持其他小程序，请在 lssues 中提出建议。
 
-## uniapp-cli-run 使用指南
+## 使用指南
 
 ### 一、构建 uni 脚手架项目
 
@@ -28,7 +28,7 @@ npm i uniapp-cli-run -D
 npx uniapp-cli-run
 ~~~
 
-![运行展示](meta/images/script.png)
+![运行展示](https://github.com/TuiMao233/uniapp-cli-run/blob/master/meta/images/script.png?raw=true)
 
 ## 注意事项
 
