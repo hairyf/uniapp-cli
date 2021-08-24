@@ -28,7 +28,7 @@ npm i uniapp-cli-run -D
 npx uniapp-cli-run
 ~~~
 
-[运行展示](meta/images/script.png)
+![运行展示](meta/images/script.png)
 
 ## 注意事项
 
