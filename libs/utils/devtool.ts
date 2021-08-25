@@ -23,7 +23,7 @@ export const enquirerRunType = async () => {
   const script = await new AutoComplete(<any>{
     name: 'type',
     message: '请输入运行类型',
-    choices: Object.keys(packageJson.scripts),
+    choices: Object.keys(packageJson.scripts).filter((v) => !['cli', 'uniapp-cli-run'].includes(v)),
     limit: 10,
     initial: 2
   }).run()

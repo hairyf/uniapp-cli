@@ -17,7 +17,7 @@ const openDevtools = async () => {
       }),
       ensureDevtoolPath('mp-weixin')
     ])
-    execa(`cli open --project ${projectPath} --color=always`, {
+    execa.sync(`cli open --project ${projectPath} --color=always`, {
       cwd: devtoolPaths['mp-weixin']!,
       stdio: 'inherit'
     })

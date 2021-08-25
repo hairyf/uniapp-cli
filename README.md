@@ -22,11 +22,21 @@ npm i uniapp-cli-run -D
 
 开发者工具的设置 -> 安全设置中开启服务端口。
 
-### 四、项目中运行脚本
+### 四、项目中添加脚本并运行
+
+~~~json
+// package.json
+{
+  "scripts": {
+    "cli": "uniapp-cli-run",
+    "build:mp-weixin": "...",
+    ...
+  }
+}
+~~~
 
 ~~~makefile
-# 当前项目运行, 全局安装使用不用加 npx
-npx uniapp-cli-run
+npm run cli
 ~~~
 
 ![运行展示](https://github.com/TuiMao233/uniapp-cli-run/blob/master/meta/images/script.png?raw=true)
