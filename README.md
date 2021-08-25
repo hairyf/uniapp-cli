@@ -28,8 +28,7 @@ npm i uniapp-cli-run -D
 // package.json
 {
   "scripts": {
-    "cli": "uniapp-cli-run",
-    "build:mp-weixin": "..."
+    "cli": "uniapp-cli-run"
   }
 }
 ~~~
