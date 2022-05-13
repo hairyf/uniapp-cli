@@ -29,3 +29,8 @@ export const devtoolPaths = new Proxy<DevtoolPaths>(fs.readJSONSync(RC_PATH), {
 
 /** 根项目包配置 */
 export const packageJson: PackgeJson = fs.readJSONSync(path.resolve(cwd(), 'package.json'))
+
+/** 对应开发者工具名称 */
+export const devtoolNames: Record<string, string> = {
+  'mp-weixin': '微信开发者工具'
+}

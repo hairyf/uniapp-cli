@@ -5,18 +5,17 @@ import fs from 'fs-extra'
 
 export const ensureDevtoolPath = async (type: keyof DevtoolPaths) => {
   const name = { 'mp-weixin': '微信开发者工具' }[type]
-  if (!devtoolPaths[type]) {
-    const { path } = await prompt<{ path: string }>({
-      type: 'input',
-      name: 'path',
-      message: `请输入${name}的绝对路径`
-    })
-    if (!fs.existsSync(path)) {
-      consola.error('该路径不存在!')
-      return Promise.resolve()
-    }
-    devtoolPaths[type] = path
+  if (devtoolPaths[type]) return undefined
+  const { path } = await prompt<{ path: string }>({
+    type: 'input',
+    name: 'path',
+    message: `请输入${name}的绝对路径`
+  })
+  if (!fs.existsSync(path)) {
+    consola.error('该路径不存在!')
+    return Promise.resolve()
   }
+  devtoolPaths[type] = path
 }
 
 export const enquirerRunType = async () => {

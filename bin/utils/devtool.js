@@ -10,18 +10,18 @@ const consola_1 = __importDefault(require("consola"));
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const ensureDevtoolPath = async (type) => {
     const name = { 'mp-weixin': '微信开发者工具' }[type];
-    if (!config_1.devtoolPaths[type]) {
-        const { path } = await enquirer_1.prompt({
-            type: 'input',
-            name: 'path',
-            message: `请输入${name}的绝对路径`
-        });
-        if (!fs_extra_1.default.existsSync(path)) {
-            consola_1.default.error('该路径不存在!');
-            return Promise.resolve();
-        }
-        config_1.devtoolPaths[type] = path;
+    if (config_1.devtoolPaths[type])
+        return undefined;
+    const { path } = await enquirer_1.prompt({
+        type: 'input',
+        name: 'path',
+        message: `请输入${name}的绝对路径`
+    });
+    if (!fs_extra_1.default.existsSync(path)) {
+        consola_1.default.error('该路径不存在!');
+        return Promise.resolve();
     }
+    config_1.devtoolPaths[type] = path;
 };
 exports.ensureDevtoolPath = ensureDevtoolPath;
 const enquirerRunType = async () => {

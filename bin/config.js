@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.packageJson = exports.devtoolPaths = void 0;
+exports.devtoolNames = exports.packageJson = exports.devtoolPaths = void 0;
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const process_1 = require("process");
 const os_1 = __importDefault(require("os"));
@@ -24,3 +24,7 @@ exports.devtoolPaths = new Proxy(fs_extra_1.default.readJSONSync(RC_PATH), {
 });
 /** 根项目包配置 */
 exports.packageJson = fs_extra_1.default.readJSONSync(path_1.default.resolve(process_1.cwd(), 'package.json'));
+/** 对应开发者工具名称 */
+exports.devtoolNames = {
+    'mp-weixin': '微信开发者工具'
+};
