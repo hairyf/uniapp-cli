@@ -1,0 +1,6 @@
+{
+  "extends": "@antfu",
+  "rules": {
+    "@typescript-eslint/space-before-blocks": "off"
+  }
+}

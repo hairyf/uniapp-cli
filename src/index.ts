@@ -1,11 +1,11 @@
 #!/usr/bin/env node
+import path from 'node:path'
 import execa from 'execa'
-import path from 'path'
 import { devtoolPaths } from './config'
 import { ensureJson } from './utils'
 import { enquirerRunType, ensureDevtoolPath } from './utils/devtool'
 
-const openDevtools = async () => {
+async function openDevtools() {
   const { is, type, script } = await enquirerRunType()
 
   if (is('mp-weixin') && ['dev', 'build'].includes(type)) {
@@ -13,22 +13,24 @@ const openDevtools = async () => {
     await Promise.all([
       ensureJson(path.join(projectPath, 'project.config.json'), {
         appid: 'touristappid',
-        projectname: 'empty'
+        projectname: 'empty',
       }),
-      ensureDevtoolPath('mp-weixin')
+      ensureDevtoolPath('mp-weixin'),
     ])
     execa.sync(`cli open --project ${projectPath} --color=always`, {
       cwd: devtoolPaths['mp-weixin']!,
-      stdio: 'inherit'
+      stdio: 'inherit',
     })
   }
+
   execa(`npm run ${script}`, { cwd: process.cwd(), stdio: 'inherit' })
 }
 
 async function cli() {
   try {
     await openDevtools()
-  } catch (error) {
+  }
+  catch (error) {
     console.error(error)
     process.exit(1)
   }

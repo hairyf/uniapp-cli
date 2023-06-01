@@ -37,6 +37,16 @@ npm i uniapp-cli-run -D
 npm run cli
 ~~~
 
+
+## Options
+
+设置默认启动脚本
+
+```ts
+// uni-run.config.ts
+import {} from 'uniapp-cli-run'
+```
+
 ![运行展示](https://github.com/TuiMao233/uniapp-cli-run/blob/master/meta/images/script.png?raw=true)
 
 ## 注意事项
