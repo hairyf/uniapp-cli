@@ -44,7 +44,13 @@ npm run cli
 
 ```ts
 // uni-run.config.ts
-import {} from 'uniapp-cli-run'
+import { defineConfig } from 'uniapp-cli-run'
+
+const config = defineConfig({
+  default: 'dev:mp-weixin'
+})
+
+export default config
 ```
 
 ![运行展示](https://github.com/TuiMao233/uniapp-cli-run/blob/master/meta/images/script.png?raw=true)
